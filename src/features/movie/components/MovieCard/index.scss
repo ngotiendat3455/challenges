@@ -1,0 +1,63 @@
+.movie {
+    .container {
+        position: relative;
+        background: $black_3;
+        border-radius: rem(4);
+    }
+
+    img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        border-radius: rem(4);
+        transition: linear;
+    }
+
+    .link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $red_0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        transition: linear;
+        opacity: 0;
+        cursor: pointer;
+
+        svg {
+            font-size: 1.25rem;
+            color: $white;
+        }
+    }
+
+    .container:hover img {
+        opacity: 0.5;
+    }
+
+    .container:hover .link {
+        opacity: 1;
+    }
+
+    footer {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer h5,
+    footer p {
+        margin-bottom: 0;
+        font-weight: 400;
+        color: $text_movie;
+    }
+
+    footer p {
+        letter-spacing: rem(1);
+    }
+}

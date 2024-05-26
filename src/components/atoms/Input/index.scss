@@ -1,0 +1,157 @@
+.a-input {
+  $root: &;
+  position: relative;
+
+  &_label {
+    color: $raisin-black;
+    margin-bottom: rem(8);
+    @include font-base(12, 16);
+
+    &-required {
+      color: $sinopia;
+      margin-left: rem(4);
+    }
+
+    &-error {
+      color: $sinopia;
+    }
+  }
+
+  &_wrap {
+    position: relative;
+  }
+
+  &_input {
+    appearance: none;
+    font: inherit;
+    font-weight: 400;
+    margin: 0;
+    outline: none;
+    transition: all $transition linear;
+    width: 100%;
+    @include font-base(14, 22);
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+
+  &_searchBtn {
+    background: transparent;
+    border-bottom: 0;
+    border-left: 1px solid $gainsboro;
+    border-right: 0;
+    border-top: 0;
+    cursor: pointer;
+    height: 100%;
+    padding: rem(8);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .a-icon {
+      height: 100%;
+    }
+  }
+
+  &_message {
+    &-error {
+      color: $white;
+      @include font-base(12, 16);
+    }
+  }
+
+  &-default {
+    #{$root}_input {
+      border-radius: rem(8);
+      padding: rem(4) rem(12);
+    }
+  }
+
+  &-primary {
+    #{$root}_input {
+      background: $white;
+      border: 1px solid $gainsboro;
+      border-radius: rem(2);
+      color: $raisin-black;
+      padding: rem(4) rem(12);
+
+      &::placeholder {
+        color: $black025;
+        @include font-base(14, 22);
+      }
+    }
+  }
+  &-dark {
+    #{$root}_input {
+      background: $black_2;
+      border: 1px solid $black_2;
+      border-radius: rem(8);
+      color: $white;
+      padding: rem(4) rem(12);
+
+      &::placeholder {
+        color: $white;
+        @include font-base(14, 22);
+      }
+    }
+    #{$root}_searchBtn {
+      border-left: 1px solid $black_2;
+    }
+  }
+  &-secondary {
+    #{$root}_input {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid $davys-grey1;
+      color: $silver-chalice;
+      height: rem(40);
+      padding: rem(4) 0 rem(8);
+
+      &::placeholder {
+        color: $silver-chalice;
+        @include font-base(14, 24);
+      }
+    }
+
+    #{$root}_label {
+      color: $silver-chalice;
+    }
+  }
+
+  &-disabled {
+    #{$root}_input {
+      background: $snow;
+    }
+  }
+
+  &-error#{$root}-primary,
+  &-error#{$root}-secondary {
+    #{$root}_label,
+    #{$root}_input,
+    #{$root}_message-error {
+      color: $sinopia;
+    }
+
+    #{$root}_input {
+      border-color: $sinopia;
+    }
+  }
+
+  // &-error#{$root}-primary {
+    
+  // }
+
+  // &-error#{$root}-secondary {
+  //   #{$root}_input {
+  //     border-color: $sinopia;
+  //     color: $sinopia;
+  //   }
+  // }
+}

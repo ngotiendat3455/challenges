@@ -7,6 +7,7 @@
 @import 'components/atoms/Icon/';
 @import 'components/atoms/Image/';
 @import 'components/atoms/Button/';
+@import 'components/atoms/Input/';
 // @import 'components/atoms/TextArea/';
 // @import 'components/atoms/Section/';
 // @import 'components/atoms/Loading/';
@@ -15,4 +16,12 @@
 @import 'components/organisms/Animate/';
 @import 'components/organisms/Header/';
 @import 'components/organisms/Tabs/';
-@import 'components/atoms/Logo/'
+@import 'components/atoms/Logo/';
+
+// @import 'features/movie/components/MovieTemplate/';
+@import 'features/movie/components/SearchForm/';
+@import 'features/movie/components/Sort/';
+@import 'features/movie/components/MovieTemplate/';
+@import 'features/movie/components/MovieList/';
+@import 'features/movie/components/GridView/';
+@import 'features/movie/components/MovieCard/';
