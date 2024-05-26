@@ -1,0 +1,146 @@
+.a-icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+
+  &-10 {
+    height: rem(10);
+    width: rem(10);
+  }
+
+  &-14 {
+    height: rem(14);
+    width: rem(14);
+  }
+
+  &-15 {
+    height: rem(15);
+    width: rem(15);
+  }
+
+  &-16 {
+    height: rem(16);
+    width: rem(16);
+  }
+
+  &-20 {
+    height: rem(20);
+    width: rem(20);
+  }
+
+  &-24 {
+    height: rem(24);
+    width: rem(24);
+  }
+
+  &-32 {
+    height: rem(32);
+    width: rem(32);
+  }
+
+  &-search {
+    background-image: url('~assets/icons/ic_search.svg');
+  }
+
+  &-instagram {
+    background-image: url('~assets/icons/ic_instagram.svg');
+  }
+
+  &-fbBlack {
+    background-image: url('~assets/icons/ic_fb_black.svg');
+  }
+
+  &-dropDownGray {
+    background-image: url('~assets/icons/ic_drop_down_gray.svg');
+  }
+
+  &-hamburger {
+    background-image: url('~assets/icons/ic_hamburger.svg');
+  }
+
+  &-close {
+    background-image: url('~assets/icons/ic_close.svg');
+  }
+
+  &-searchGray {
+    background-image: url('~assets/icons/ic_search-gray.svg');
+  }
+
+  &-loading {
+    background-image: url('~assets/icons/ic_loading.svg');
+  }
+
+  &-igWhite {
+    background-image: url('~assets/icons/ic_ig_white.svg');
+  }
+
+  &-fbWhite {
+    background-image: url('~assets/icons/ic_fb_white.svg');
+  }
+
+  &-fbBlue {
+    background-image: url('~assets/icons/ic_facebook_blue.svg');
+  }
+
+  &-zalo {
+    background-image: url('~assets/icons/ic_zalo.svg');
+  }
+
+  &-arrowNextWhite {
+    background-image: url('~assets/icons/ic_arrow_next_white.svg');
+  }
+
+  &-arrowNextBlack {
+    background-image: url('~assets/icons/ic_arrow_next_black.svg');
+  }
+
+  &-accessTime {
+    background-image: url('~assets/icons/ic_access_time.svg');
+  }
+
+  &-locationOn {
+    background-image: url('~assets/icons/ic_location_on.svg');
+  }
+
+  &-phone {
+    background-image: url('~assets/icons/ic_phone.svg');
+  }
+
+  &-shoppingBag {
+    background-image: url('~assets/icons/ic_shopping_bag.svg');
+  }
+
+  &-cloudUpload {
+    background-image: url('~assets/icons/ic_upload.svg');
+  }
+
+  &-greenSuccess {
+    background-image: url('~assets/icons/ic_success_circle_outline.svg');
+  }
+
+  &-redError {
+    background-image: url('~assets/icons/ic_error_outline.svg');
+  }
+
+
+  &-closeBlack {
+    background-image: url('~assets/icons/ic_close_black.svg');
+  }
+
+  &-arrowUpward {
+    background-image: url('~assets/icons/ic_arrow_upward.svg');
+  }
+
+  &-pause {
+    background-image: url('~assets/icons/ic_pause_white.svg');
+  }
+
+  &-unMute {
+    background-image: url('~assets/icons/ic_unmute_white.svg');
+  }
+
+  &-mute {
+    background-image: url('~assets/icons/ic_mute_white.svg');
+  }
+}

@@ -1,0 +1,102 @@
+.o-section {
+  margin-top: rem(40);
+  
+  @include tablet-down {
+    margin-top: rem(32);
+  }
+  @include mobile-down {
+    margin-top: rem(24);
+  }
+
+  &-noMarginTop {
+    margin-top: 0;
+  }
+
+  &-marginBottom {
+    margin-bottom: rem(40);
+  
+    @include tablet-down {
+      margin-bottom: rem(32);
+    }
+    @include mobile-down {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &-mt-60 {
+    margin-top: rem(60);
+  
+    @include tablet-down {
+      margin-top: rem(40);
+    }
+    @include mobile-down {
+      margin-top: rem(24);
+    }
+  }
+
+  &-mb-60 {
+    margin-bottom: rem(60);
+  
+    @include tablet-down {
+      margin-bottom: rem(40);
+    }
+    @include mobile-down {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &-mt-100 {
+    margin-top: rem(100);
+  
+    @include tablet-down {
+      margin-top: rem(60);
+    }
+    @include mobile-down {
+      margin-top: rem(32);
+    }
+  }
+
+  &-mb-100 {
+    margin-bottom: rem(100);
+  
+    @include tablet-down {
+      margin-bottom: rem(60);
+    }
+    @include mobile-down {
+      margin-bottom: rem(32);
+    }
+  }
+
+  &-mb-120 {
+    margin-bottom: rem(120);
+  
+    @include tablet-down {
+      margin-bottom: rem(60);
+    }
+    @include mobile-down {
+      margin-bottom: rem(32);
+    }
+  }
+
+  &-mt-80 {
+    margin-top: rem(80);
+  
+    @include tablet-down {
+      margin-top: rem(60);
+    }
+    @include mobile-down {
+      margin-top: rem(32);
+    }
+  }
+
+  &-mb-80 {
+    margin-bottom: rem(80);
+  
+    @include tablet-down {
+      margin-bottom: rem(60);
+    }
+    @include mobile-down {
+      margin-bottom: rem(32);
+    }
+  }
+}

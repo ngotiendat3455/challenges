@@ -1,0 +1,113 @@
+.a-heading {
+  margin: 0;
+  @include font-base(32, 48);
+  @include tablet-down {
+    @include font-base(24, 32);
+  }
+  @include mobile-down {
+    @include font-base(20, 30);
+  }
+
+  &-20x30 {
+    @include font-base(20, 30);
+    @include mobile-down {
+      @include font-base(16, 24);
+    }
+  }
+
+  &-24x32 {
+    @include font-base(24, 32);
+    @include tablet-down {
+      @include font-base(20, 30);
+    }
+    @include mobile-down {
+      @include font-base(16, 24);
+    }
+  }
+
+  &-24x36 {
+    @include font-base(24, 36);
+    @include tablet-down {
+      @include font-base(20, 34);
+    }
+    @include mobile-down {
+      @include font-base(16, 28);
+    }
+  }
+
+  &-48x56 {
+    @include font-base(48, 56);
+    @include tablet-down {
+      @include font-base(38, 48);
+    }
+    @include mobile-down {
+      @include font-base(32, 44);
+    }
+  }
+
+  &-48x72 {
+    @include font-base(48, 72);
+    @include tablet-down {
+      @include font-base(38, 52);
+    }
+    @include mobile-down {
+      @include font-base(32, 48);
+    }
+  }
+
+  &-48x56 {
+    @include font-base(48, 56);
+    @include tablet-down {
+      @include font-base(38, 46);
+    }
+    @include mobile-down {
+      @include font-base(32, 46);
+    }
+  }
+
+  &-48x48 {
+    @include font-base(48, 48);
+    @include tablet-down {
+      @include font-base(38, 38);
+    }
+    @include mobile-down {
+      @include font-base(32, 32);
+    }
+  }
+
+  &-32x48 {
+    @include font-base(32, 48);
+    @include tablet-down {
+      @include font-base(24, 32);
+    }
+    @include mobile-down {
+      @include font-base(20, 30);
+    }
+  }
+
+  &-32x40 {
+    @include font-base(32, 40);
+    @include tablet-down {
+      @include font-base(24, 32);
+    }
+    @include mobile-down {
+      @include font-base(20, 30);
+    }
+  }
+
+  &-24x36 {
+    @include font-base(24, 36);
+    @include tablet-down {
+      @include font-base(20, 30);
+    }
+    @include mobile-down {
+      @include font-base(16, 24);
+    }
+  }
+
+
+  @include style-color;
+  @include style-general;
+  @include style-font-weight;
+  @include style-font-family;
+}

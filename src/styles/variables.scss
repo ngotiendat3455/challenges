@@ -1,0 +1,27 @@
+// fonts
+$font-path: '~assets/fonts/';
+$font-noto: 'Noto Serif Display', serif;
+$font-montserrat: 'Montserrat', serif;
+$font-lexend: 'Lexend', serif;
+$font-san: 'San Francisco Display', serif;
+
+// transition
+$transition: 0.25s;
+$transition-long: 0.4s;
+
+$standard-viewport: 1366px;
+
+// z-index
+$z-1: 1;
+$z-2: 2;
+$z-quick-button: 99;
+$z-loading: 104;
+$z-header: 100;
+$z-modal: 101;
+$z-language: 98;
+
+$height-header-desktop: 140;
+$height-header-mobile: 72;
+
+$height-footer: 414;
+$z-video-controls: 4;

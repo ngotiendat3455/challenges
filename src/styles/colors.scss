@@ -1,0 +1,104 @@
+// Primary Colors
+$british-racing-green: rgb(7, 76, 49); // #074c31
+$android-green: rgb(161, 192, 56); // #a1c038
+$sapphire: rgb(14, 78, 173); // #0e4ead
+
+// Text Colors
+$raisin-black: rgb(38, 38, 38); // #262626
+$raisin-black1: rgb(30, 34, 40); //#1e2228
+$davys-grey: rgb(89, 89, 89); // #595959
+$gray-x11: rgb(191, 191, 191); // #bfbfbf
+$white-smoke: rgb(245, 245, 245); // #f5f5f5
+$snow: rgb(250, 250, 250); // #fafafa
+$snow1: rgb(252, 249, 247); // #fcf9f7
+$white: rgb(255, 255, 255); // #ffffff
+$black: rgb(0, 0, 0); // #000000
+$silver-chalice: rgb(178, 178, 178); //#b2b2b2
+$davys-grey1: rgb(85, 88, 94); // #55585e
+$taupe-gray: rgb(140, 140, 140); //#8c8c8c
+$arsenic: rgb(67, 67, 67);  // #434343
+$gainsborodc: rgb(220, 221, 224); //#dcdde0
+$gray82: hhwb(217 15% 82%); // #25282F;
+$blue-f68: rgba(8, 47, 104, 1); //#082F68;
+$blue-e8a: rgba(11, 62, 138, 1); //#0B3E8A;
+$black-1f: rgba(31, 31, 31, 1); //#1F1F1F
+$cool-black: rgb(0, 43, 96); //#002b60
+// THEM COLOR
+$celestial-blue: rgb(60, 18, 245);
+$alice-blue: rgb(31, 62, 204);
+$track-color: rgb(136, 153, 231);
+$thumbColor: rgb(220, 222, 233);
+$label-active: rgba(14, 78, 173, 1);
+$diver: rgba(0, 0, 0, 0.06);
+$beaver: rgb(155, 125, 107); //#9b7d6b
+$outer-space: rgb(64, 70, 78); //#40464e
+$raisinblack3: rgb(58, 64, 72); // #3A4048
+$sonic-silver: rgb(106, 110, 118);//#6a6e76
+// Palette Colors
+$amazon: rgb(57, 112, 90); // #39705a
+$xanadu: rgb(106, 148, 131); // #6a9483
+$aero-blue: rgb(207, 236, 225); // #cfece1
+$green-ryb: rgb(118, 168, 38); // #76a826
+$june-bud: rgb(180, 205, 96); // #b4cd60
+$pale-goldenrod: rgb(217, 230, 175); // #d9e6af
+$japanese-indigo: rgb(30, 63, 87);//#1e3f57
+
+// Toast Colors
+$toast-green: rgb(96, 168, 66); // #60a842
+$sinopia: rgb(206, 49, 0); // #ce3100
+$vivid-amber: rgb(206, 142, 0); // #ce8e00
+$true-blue: rgb(0, 95, 206); // #005fce
+
+// Others
+$urobilin: rgb(223, 179, 37); // #dfb325
+$antique-bronze: rgb(103, 88, 34); // #675822
+$plum: rgb(161, 66, 150); // #a14296
+$cyber-grape: rgb(87, 58, 116); // #573a74
+$bg-white-smoke: rgb(246, 246, 246); // #f6f6f6
+$gainsboro: rgb(217, 217, 217); //#d9d9d9
+$spanish-green4a: rgb(0, 152, 74); // #00984a
+$anti-flash-white: rgb(240, 240, 240); // #f0f0f0
+$snow-1: rgb(252, 249, 247); //#fcf9f7
+$ash-grey: rgb(178, 182, 187); //#b2b6bb
+$grey-scrollBar: rgba(243, 246, 251, 1); //#F3F6FB
+$blue-scrollBar: rgba(207, 220, 239, 1); //#CFDCEF
+$blue2-scrollBar: rgb(145, 185, 245); //#CFDCEF
+$decorBrown1: #c6b8b0;
+$decorBrown2: #9b7d6b;
+$kombu-green: rgb(50, 65, 56); // #324138
+$cobalt-blue: rgb(13, 74, 164); //#0d4aa4
+$beaver: rgb(155, 125, 107); //#9b7d6b
+$eerie-black: rgb(31, 31, 31); //#1f1f1f
+$charleston-green: rgb(37, 40, 47); //#25282f
+$gray-x11: rgb(182, 187, 197);
+$gunmetal: rgb(42, 46, 52);
+
+// Overlays
+$black025: rgba($black, 0.25);
+$black-12: rgba($black, 0.12);
+$black-8: rgba($black, 0.8);
+$black-08: rgba($black, 0.08);
+$black-03: rgba($black, 0.3);
+$black-5: rgba($black, 0.5);
+$black-05: rgba($black, 0.05);
+$black0043: rgba($black, 0.043);
+$black0016: rgba($black, 0.016);
+$black006: rgba($black, 0.06);
+$black085: rgba($black, 0.85);
+$black045: rgba($black, 0.45);
+$raisin-black1-015: rgba($raisin-black1, 0.15);
+$raisin-black1-015: rgba($raisin-black1, 0.15);
+$kombu-green01: rgba($kombu-green, 0.1);
+$kombu-green03: rgba($kombu-green, 0.3);
+$white03: rgba($white, 0.3);
+$white09: rgba($white, 0.9);
+$white03: rgba($white, 0.3);
+$eerie-black08: rgba($eerie-black, 0.8);
+$blue-e8a01: rgba($blue-e8a, 0.1);
+$snow-1-07: rgba($snow-1, 0.7);
+$black012: rgba($black, 0.12);
+$black008: rgba($black, 0.08);
+$black005: rgba($black, 0.05);
+
+// Linear
+$main-video: linear-gradient(0deg, $black-03, $black-03);

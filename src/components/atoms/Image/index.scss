@@ -1,0 +1,164 @@
+.a-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  img {
+    display: none;
+  }
+
+  &-inherit {
+    background-size: inherit;
+  }
+
+  &-initial {
+    background-size: initial;
+  }
+
+  &-contain {
+    background-size: contain;
+  }
+
+  &-1x1 {
+    @include aspect-ratio(1, 1);
+  }
+
+  &-logo {
+    @include aspect-ratio(206, 40);
+  }
+
+  &-3x4 {
+    @include aspect-ratio(3, 4);
+  }
+
+  &-4x3 {
+    @include aspect-ratio(4, 3);
+  }
+
+  &-16x9 {
+    @include aspect-ratio(16, 9);
+  }
+
+  &-450x182 {
+    @include aspect-ratio(450, 182);
+  }
+
+  &-547x752 {
+    @include aspect-ratio(547, 752);
+    @include break-max(1023px) {
+      @include aspect-ratio(547, 360);
+    }
+    @include break-max(575px) {
+      @include aspect-ratio(1, 1);
+    }
+  }
+
+  &-547x360 {
+    @include aspect-ratio(547, 360);
+    @include break-max(575px) {
+      @include aspect-ratio(1, 1);
+    }
+  }
+
+  &-1366x600 {
+    @include aspect-ratio(1366, 600);
+  }
+
+  &-259x52 {
+    @include aspect-ratio(259, 52);
+  }
+
+  &-1094x1280 {
+    @include aspect-ratio(1094, 1280);
+  }
+
+  &-429x572 {
+    @include aspect-ratio(429, 572);
+  }
+
+  &-banner {
+    @include aspect-ratio(16, 9);
+
+    // @include tablet-down {
+    //   @include aspect-ratio(2, 1);
+    // }
+
+    // @include mobile-down {
+    //   @include aspect-ratio(1, 1);
+    // }
+  }
+
+  &-353x254 {
+    @include aspect-ratio(353, 254);
+  }
+
+  &-415x572 {
+    @include aspect-ratio(415, 572);
+  }
+
+  &-257x343 {
+    @include aspect-ratio(257, 343);
+  }
+
+  &-547x308 {
+    @include aspect-ratio(547, 308);
+  }
+
+  &-206x154 {
+    @include aspect-ratio(206, 154);
+  }
+
+  &-488x322 {
+    @include aspect-ratio(488, 322);
+  }
+
+  &-1126x633 {
+    @include aspect-ratio(1126, 633);
+  }
+
+  &-271x410 {
+    @include aspect-ratio(271, 410);
+  }
+
+  &-449x596 {
+    @include aspect-ratio(449, 596);
+  }
+
+  &-348x469 {
+    @include aspect-ratio(348, 469);
+  }
+
+  &-465x618 {
+    @include aspect-ratio(465, 618);
+  }
+
+  &-257x215 {
+    @include aspect-ratio(257, 215);
+  }
+
+  &-blur {
+    cursor: pointer;
+    filter: grayscale(1);
+    transition: all 0.3s linear;
+
+    &:hover {
+      filter: none;
+    }
+  }
+
+  &-354x119 {
+    @include aspect-ratio(354, 199);
+  }
+
+  &-354x354 {
+    @include aspect-ratio(354, 354);
+  }
+
+  &-416x552 {
+    @include aspect-ratio(416, 552);
+  }
+
+  &-255x214 {
+    @include aspect-ratio(255, 214);
+  }
+}

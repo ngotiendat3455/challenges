@@ -1,0 +1,105 @@
+.o-tabs {
+  $root: &;
+  @include adjust-flex;
+  border-bottom: 1px solid $black006;
+
+  &_labels {
+    
+    border-radius: rem(3);
+    overflow-x: auto;
+    position: relative;
+    @include adjust-flex(flex-start, center);
+    @include scroll-bars(8);
+  }
+
+  &_label {
+    color: $davys-grey;
+    font-weight: 600;
+    padding: 0 rem(16);
+    transition: all $transition linear;
+    white-space: nowrap;
+    @include font-base(25, 22);
+    @include tablet-down {
+      @include font-base(20, 22);
+    }
+    @include mobile-down {
+      @include font-base(16, 22);
+    }
+  }
+
+  &_tab {
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    padding-bottom: rem(12);
+    padding-top: rem(12);
+    position: relative;
+    transition: all $transition linear;
+
+    @include mobile-down {
+      padding-bottom: rem(8);
+      padding-top: rem(8);
+    }
+
+    &:hover,
+    &-active {
+      #{$root}_label {
+        color: $sapphire;
+      }
+    }
+
+    &-active {
+      border-bottom: 1px solid $sapphire;
+    }
+  }
+
+  &_panel {
+    display: none;
+
+
+    &-active {
+      display: block;
+    }
+  }
+
+  &-borderActive2px {
+    #{$root}_tab {
+      #{$root}_label {
+        font-size: rem(18);
+        font-weight: 400;
+        line-height: rem(28);
+      }
+
+      &-active {
+        border-bottom: 2px solid $sapphire;
+      }
+    }
+  }
+
+  &-gap100 {
+    #{$root}_labels {
+      gap: rem(100);
+      @include break-max(1023px) {
+        gap: rem(48);
+      }
+    }
+    #{$root}_tab {
+      &-active {
+        border-bottom: 2px solid $sapphire;
+      }
+    }
+  }
+
+  &-searchModifier {
+    #{$root}_tab {
+      #{$root}_label {
+        font-size: rem(18);
+        font-weight: 400;
+        line-height: rem(28);
+      }
+      
+      &-active {
+        border-bottom: 2px solid $sapphire;
+      }
+    }
+  }
+}

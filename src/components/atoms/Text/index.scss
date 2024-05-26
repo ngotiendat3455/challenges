@@ -1,0 +1,72 @@
+.a-text {
+  margin: 0;
+  transition: $transition ease;
+  @include font-base(16, 24);
+  @include mobile-down {
+    @include font-base(14, 22);
+  }
+
+  &-20x30 {
+    @include font-base(20, 30);
+    @include mobile-down {
+      @include font-base(16, 24);
+    }
+  }
+
+  &-25x25 {
+    @include font-base(25, 25);
+    @include mobile-down {
+      @include font-base(18, 18);
+    }
+  }
+
+  &-18x28 {
+    @include font-base(18, 28);
+    @include mobile-down {
+      @include font-base(14, 22);
+    }
+  }
+
+  &-14x22 {
+    @include font-base(14, 22);
+    @include mobile-down {
+      @include font-base(12, 20);
+    }
+  }
+
+  &-12x16 {
+    @include font-base(12, 16);
+  }
+
+  &-18x28 {
+    @include font-base(18, 28);
+    @include tablet-down {
+      @include font-base(16, 24);
+    }
+    @include mobile-down {
+      @include font-base(14, 22);
+    }
+  }
+
+  &-inline {
+    display: inline-block;
+  }
+
+  &-lineCamp1 {
+    @include text-overflow(1);
+  }
+
+  &-lineCamp2 {
+    @include text-overflow(2);
+    word-break: break-word;
+  }
+  
+  &-lineCamp4 {
+    @include text-overflow(4);
+    word-break: break-word;
+  }
+  @include style-color();
+  @include style-font-weight();
+  @include style-general();
+  @include style-font-family();
+}
