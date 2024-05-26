@@ -3,22 +3,22 @@
   margin-right: auto;
   padding-left: rem(16);
   padding-right: rem(16);
+  width: 100%;
+  // @include small-mobile-up {
+  //   max-width: rem(540);
+  // }
 
-  @include small-mobile-up {
-    max-width: rem(540);
-  }
+  // @include mobile-up {
+  //   max-width: rem(720);
+  // }
 
-  @include mobile-up {
-    max-width: rem(720);
-  }
+  // @include tablet-up {
+  //   max-width: rem(960);
+  // }
 
-  @include tablet-up {
-    max-width: rem(960);
-  }
-
-  @include desktop-up {
-    max-width: rem(1140);
-  }
+  // @include desktop-up {
+  //   max-width: rem(1140);
+  // }
 
   @include break-min($standard-viewport) {
     max-width: $standard-viewport;

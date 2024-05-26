@@ -2,6 +2,7 @@
   $root: &;
   align-items: center;
   border: 1px solid $davys-grey;
+  border-radius: 0.25rem;
   box-sizing: border-box;
   display: flex;
   font-family: $font-montserrat;
@@ -32,10 +33,26 @@
     }
   }
 
+  &-red{
+    background-color: $red-0;
+    color: $white;
+    opacity: 0.9;
+    border: 1px solid $red-0;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
   &-br-2 {
     border-radius: rem(2);
   }
-
+  &-minWidth112px{
+    min-width: 120px;
+  }
   &-bgRaisinBlack {
     background: $raisin-black;
     box-shadow: 0 rem(2) 0 $black0043;

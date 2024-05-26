@@ -5,7 +5,7 @@ import Icon from 'components/atoms/Icon';
 import mapModifiers from 'utils/functions';
 
 type Size = 'sm' | 'md';
-type Variant = 'primary' | 'bgRaisinBlack' | 'bgWhite' | 'bgBlack' | 'outlineGray' | 'bgWhiteBorder' | 'bgTransparent';
+type Variant = 'minWidth112px' | 'red' | 'primary' | 'bgRaisinBlack' | 'bgWhite' | 'bgBlack' | 'outlineGray' | 'bgWhiteBorder' | 'bgTransparent';
 type BorderRadius = 'noBr' | 'br-2';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

@@ -1,0 +1,12 @@
+.nfLogo{
+    $root: &;
+    fill: $red-0;
+    display: inline-block;
+    //line-height: 90px;
+    text-decoration: none;
+    vertical-align: middle;
+    // line-height: 75px;
+    .svg-icon-n-logo{
+        width: 24px;
+    }
+}

@@ -4,22 +4,46 @@
 import React, {
 } from 'react';
 import Container from 'components/organisms/Container';
+import Button from 'components/atoms/Button';
+import Logo from 'components/atoms/Logo';
 
 type HeaderProps = {
-  
+
 }
 const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <div className="o-header">
-      <div className="o-header_wrapperMain">
-        <Container>
-          <div className="o-header_mobileBar">
-
+      <Container>
+        <div className="o-header_wrapperMain">
+          <div className="o-header__contentLeft"
+          // style={{
+          //   height: '24px',
+          //   width: '24px'
+          // }}
+          >
+            <Logo />
           </div>
-          some thing
-        </Container>
-      </div>
+          <div className="o-header__contentRight">
+            <Button
+              modifiers={[
+                'red',
+                'minWidth112px'
+              ]}
+            >
+              Top Related
+            </Button>
+            <Button
+              modifiers={[
+                'primary',
+                'minWidth112px'
+              ]}
+            >
+              Now Playing
+            </Button>
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };
