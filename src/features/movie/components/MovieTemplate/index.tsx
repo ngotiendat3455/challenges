@@ -12,25 +12,38 @@ import Animate from 'components/organisms/Animate';
 const Movies = ({
     gridView,
     movieList
-}: any) => {
+}: {
+    gridView: boolean,
+    movieList: IMovie[]
+}) => {
     if (gridView === false) {
         return <ListView products={movieList} />
     }
     return <GridView products={movieList} />
 }
 
-const MovieTemplate: React.FC<any> = ({
+interface IMovieTemplate {
+    isLoading: boolean,
+    disabledButtonLoadMore: boolean,
+    onLoadMore:() => void,
+    movies: IMovie[],
+    handleFilter: (text: string) => void,
+    initData: boolean
+}
+const MovieTemplate: React.FC<IMovieTemplate> = ({
     isLoading,
     disabledButtonLoadMore,
     onLoadMore,
-    movies
+    movies,
+    handleFilter,
+    initData
 }) => {
     const [gridView, setGridView] = React.useState(true);
 
     return (
         <div className='MovieTemplate'>
             <Animate type="fadeIn" animationDelay={`${0.15}s`} defaultDivideScreen={1.3}>
-                <SearchForm />
+                <SearchForm handleFilter={handleFilter} />
             </Animate>
             <Sort
                 setGridView={() => {
@@ -42,20 +55,14 @@ const MovieTemplate: React.FC<any> = ({
                     setGridView(false)
                 }}
             />
-            {movies.length > 1 && (
+            {movies.length >= 1 && (
                 <Movies
                     gridView={gridView}
                     movieList={movies}
                 />
             )}
-            {/* {isLoading &&
-                !movies.length &&
-                [1, 2, 3, 4, 5, 6].map((index) => (
-                    <div key={index}>
-                        <MovieSkeleton />
-                    </div>
-                ))} */}
-            {isLoading && movies.length < 1 && (
+
+            {initData && movies.length < 1 && (
                 (
                     <h5 className='MovieTemplate-text' style={{ textTransform: 'none' }}>
                         Sorry, no movies matched your search.

@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({
           <div className="o-header__contentRight">
             <Button
               modifiers={[
-                currentPath !== '/movie/now-playing' ? 'red' : 'primary',
+                !currentPath.includes('/movie/now-playing') ? 'red' : 'primary',
                 'minWidth112px'
               ]}
               onClick={() => {
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({
             </Button>
             <Button
               modifiers={[
-                currentPath === '/movie/now-playing' ? 'red' : 'primary',
+                currentPath.includes('/movie/now-playing')  ? 'red' : 'primary',
                 'minWidth112px'
               ]}
               onClick={() => {

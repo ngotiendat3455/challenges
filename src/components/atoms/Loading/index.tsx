@@ -54,6 +54,15 @@ const Loading: React.FC<LoadingProps> = ({ isShow, variant, isWrapper }) => {
   );
 };
 
+export const Loading2: React.FC = () => {
+  return (
+    <div className="a-loading_wrapper">
+      <div className="loader"></div>
+    </div>
+  )
+
+}
+
 Loading.defaultProps = {
   variant: 'default',
   isShow: false,

@@ -9,10 +9,10 @@ const NowPlaying: React.FC<any> = () => {
   const { loading,
     data,
     handleChangePage,
-    pagination,
     hidden,
-    initData
-  } = useCallService(fetchMovie, [])
+    initData,
+    handleFilter
+  } = useCallService<IMovie>(fetchMovie, [])
   
   if (!initData) {
     return <Loading variant="fullScreen" isShow />
@@ -24,6 +24,8 @@ const NowPlaying: React.FC<any> = () => {
         onLoadMore={() => handleChangePage()}
         disabledButtonLoadMore={hidden}
         movies={data}
+        handleFilter={handleFilter}
+        initData={initData}
       />
     </div>
   )

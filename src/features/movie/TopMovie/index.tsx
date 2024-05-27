@@ -8,17 +8,18 @@ const TopMovie: React.FC<any> = () => {
     const { loading,
         data,
         handleChangePage,
-        pagination,
         hidden,
-        initData
+        initData,
+        handleFilter
     } = usePaginate(fetchMoviePopular, [])
-    console.log('initData', initData, data);
+
     if (!initData) {
         return <Loading variant="fullScreen" isShow />
     }
     return (
         <div>
             <MovieTemplate
+                handleFilter={handleFilter}
                 isLoading={loading}
                 onLoadMore={() => handleChangePage()}
                 disabledButtonLoadMore={hidden}

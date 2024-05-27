@@ -31,6 +31,7 @@ function usePaginate<T>(
     totalPages: 1,
   });
   const navigate = useNavigate();
+  const [originData, setOriginData] = useState<T[]>([]);
   const [index, setIndex] = useState<number>(0);
   const [data, setData] = useState<T[]>([]);
   const [initData, setInitData] = useState<boolean>(false);
@@ -51,15 +52,18 @@ function usePaginate<T>(
       });
       if (!initData) {
         setData(dataResponse.results);
+        setOriginData(dataResponse.results)
       } else {
-        const currentPageArray = (dataResponse?.results as any[]) ?? [];
+        const currentPageArray = (dataResponse?.results) ?? [];
         const beforePageArray = data;
-        setData([...beforePageArray, ...currentPageArray]);
+        const temp = [...beforePageArray, ...currentPageArray];
+        setData(temp);
+        setOriginData(temp)
       }
 
       setInitData(true);
     } catch(error: any) {
-      const {message , ...rest} = error;
+      // const {message} = error;
       const errorCode = (error as AxiosError).response?.status || 0;
       switch (errorCode) {
         case 503:
@@ -87,8 +91,19 @@ function usePaginate<T>(
     handleChangePage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dep);
+
+  const handleFilter = (text: string) => {
+    console.log('text', text)
+    if (!text) {
+      setData(originData);
+    } else {
+      const newState = originData.filter((item: any) => item?.title?.toLowerCase().includes(text));
+      setData(newState);
+    }
+    
+  }
   return {
-    initData, data, loading, pagination, handleChangePage, hidden: pagination.totalPages <= pagination.page,
+    handleFilter, originData, initData, data, loading, pagination, handleChangePage, hidden: pagination.totalPages <= pagination.page,
   };
 }
 
