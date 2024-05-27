@@ -41,19 +41,19 @@ const MovieTemplate: React.FC<any> = ({
                     setGridView(false)
                 }}
             />
-            {!isLoading && movies.length > 1 && (
+            {movies.length > 1 && (
                 <Movies
                     gridView={gridView}
                     movieList={movies}
                 />
             )}
-            {isLoading &&
+            {/* {isLoading &&
                 !movies.length &&
                 [1, 2, 3, 4, 5, 6].map((index) => (
                     <div key={index}>
                         <MovieSkeleton />
                     </div>
-                ))}
+                ))} */}
             {/* {isLoading && movies.length < 1 && (
                 (
                     <h5 className='MovieTemplate-text' style={{ textTransform: 'none' }}>
