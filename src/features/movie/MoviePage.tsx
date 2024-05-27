@@ -17,4 +17,4 @@ const MoviePage = () => (
   </Routes>
 )
 
-export {MoviePage}
+export default MoviePage
