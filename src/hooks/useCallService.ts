@@ -1,79 +1,95 @@
 // https://usehooks-typescript.com/react-hook/use-fetch
 
-import { useEffect, useReducer, useRef } from 'react';
+import { AxiosError, AxiosResponse } from 'axios';
+import { useEffect, useReducer, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-interface StateType<T> {
-  status: 'pending' | 'fullfilled' | 'rejected';
-  data?: T;
-  error?: string;
-  loading:boolean;
-}
 
-type Action<T> =
-  | { type: 'pending' }
-  | { type: 'fullfilled'; payload: T | undefined }
-  | { type: 'rejected'; payload: any };
 
-function useCallService<T>(
-  service: (...arg: any) => Promise<T>,
-  dep?:any[],
-): StateType<T> {
-  const cancelRequest = useRef<boolean>(false);
-  const serviceReducer = (state: StateType<T>, action: Action<T>): StateType<T> => {
-    switch (action.type) {
-      case 'pending':
-        return {
-          ...state,
-          status: 'pending',
-          loading: true,
-        };
-      case 'fullfilled': {
-        return {
-          ...state,
-          status: 'fullfilled',
-          data: action.payload,
-          loading: false,
-        };
+// type APIPaginationResponse<T> = {
+//   results: T;
+//   page: number;
+//   total_pages: number;
+//   total_results: number;
+//   dates?: {
+//     maximum: string;
+//     minimum: string;
+//   }
+// }
+  interface IParamPagination{
+    page?:number,
+  }
+
+function usePaginate<T>(
+  service: (...arg: any) => Promise<APIPaginationResponse<T[]>>,
+  dep?: any[],
+) {
+  const [loading, setLoading] = useState<boolean>(false);
+  const [pagination, setPagination] = useState({
+    page: 1,
+    total: 0,
+    totalPages: 1,
+  });
+  const navigate = useNavigate();
+  const [index, setIndex] = useState<number>(0);
+  const [data, setData] = useState<T[]>([]);
+  const [initData, setInitData] = useState<boolean>(false);
+  const handleChangePage = async (pageParam?: IParamPagination) => {
+    if (loading) return;
+    setLoading(true);
+    try {
+      const showMoreIndex = index + 1;
+      const dataResponse = await service({
+        ...pageParam,
+        page: showMoreIndex,
+      });
+      setIndex(dataResponse?.page ?? showMoreIndex);
+      setPagination({
+        page: dataResponse?.page,
+        totalPages: dataResponse?.total_pages,
+        total: dataResponse?.total_results,
+      });
+      if (!initData) {
+        setData(dataResponse.results);
+      } else {
+        const currentPageArray = (dataResponse?.results as any[]) ?? [];
+        const beforePageArray = data;
+        setData([...beforePageArray, ...currentPageArray]);
       }
-      case 'rejected':
-        return {
-          ...state,
-          status: 'rejected',
-          error: action.payload,
-          loading: false,
-        };
-      default:
-        return state;
+
+      setInitData(true);
+    } catch(error: any) {
+      const {message , ...rest} = error;
+      const errorCode = (error as AxiosError).response?.status || 0;
+      switch (errorCode) {
+        case 503:
+          // return <Errors statusCode={503} />;
+          navigate('/error/500');
+          break;
+        case 500:
+          navigate('/error/500');
+          break;
+        case 404:
+          navigate('/error/500');
+          break;
+        case 403:
+          navigate('/error/500');
+          break;
+        default:
+          break;
+      }
+    }
+    finally {
+      setLoading(false);
     }
   };
-
-  const initialState: StateType<T> = {
-    status: 'pending',
-    error: undefined,
-    data: undefined,
-    loading: false,
-  };
-
-  const [state, dispatch] = useReducer(serviceReducer, initialState);
-
   useEffect(() => {
-    const callService = async () => {
-      dispatch({ type: 'pending' });
-      try {
-        const result = await service();
-        dispatch({ type: 'fullfilled', payload: result });
-      } catch (error) {
-        dispatch({ type: 'rejected', payload: error });
-      }
-    };
-    callService();
-    // eslint-disable-next-line consistent-return
-    return () => {
-      cancelRequest.current = true;
-    };
+    handleChangePage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dep);
-  return state;
+  return {
+    data, loading, pagination, handleChangePage, hidden: pagination.totalPages <= pagination.page,
+  };
 }
 
-export default useCallService;
+export default usePaginate;

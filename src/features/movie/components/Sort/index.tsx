@@ -30,7 +30,7 @@ const Sort: React.FC<any> = ({
                     <BsList />
                 </button>
             </div>
-            <p>{products.length} products found</p>
+            <p>{products.length} movies found</p>
             <hr />
             {/* <form>
                 <label htmlFor='sort'>sort by</label>

@@ -5,7 +5,8 @@ import axios, { AxiosRequestConfig, AxiosError, AxiosResponse } from 'axios';
 // import { LOCAL_STORAGE } from 'utils/constants';
 
 export const API = process.env.REACT_APP_API_BASE_URL;
-export const TOKEN = process.env.REACT_API_KEY
+export const TOKEN = process.env.REACT_API_KEY;
+export const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });

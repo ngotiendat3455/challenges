@@ -4,4 +4,19 @@
         color: $text_movie;
         text-align: center;
     }
+    &-news_actions {
+        margin-top: rem(24);
+    
+        &_icon {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+        &_button{
+            display: flex;
+          justify-content: center;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+      }
 }
