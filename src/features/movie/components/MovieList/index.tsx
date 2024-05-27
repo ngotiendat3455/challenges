@@ -18,12 +18,17 @@ const ListView: React.FC<{
                             alt={title}
                             type="src"
                             loadedClassName={"loaded"}
+                            style={{
+                                height: 'calc(300px/1.78)',
+                                backgroundPosition: '50% 50%',
+                                backgroundSize: 'cover'
+                            }}
                         />
                         <div>
                             <h4>{title}</h4>
                             <h5 className='price'>{vote_average}</h5>
                             <p>{overview.substring(0, 150)}...</p>
-                            <Link to={`/products/${id}`} className='btn'>
+                            <Link to={`${id}`} className='btn'>
                                 Details
                             </Link>
                         </div>

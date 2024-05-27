@@ -6,7 +6,7 @@ import ListView from '../MovieList';
 import GridView from '../GridView';
 import Icon from 'components/atoms/Icon';
 import Button from 'components/atoms/Button';
-import { MovieSkeleton } from '../MovieCard';
+// import { MovieSkeleton } from '../MovieCard';
 
 const Movies = ({
     gridView,
@@ -41,11 +41,15 @@ const MovieTemplate: React.FC<any> = ({
                     setGridView(false)
                 }}
             />
-            {movies.length > 1 && (
+            {movies.length > 1 ? (
                 <Movies
                     gridView={gridView}
                     movieList={movies}
                 />
+            ) : (
+                <h5 className='MovieTemplate-text' style={{ textTransform: 'none' }}>
+                    Sorry, no movies matched your search.
+                </h5>
             )}
             {/* {isLoading &&
                 !movies.length &&

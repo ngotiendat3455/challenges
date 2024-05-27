@@ -5,8 +5,10 @@ export const fetchMoviePopular = async ():Promise<APIPaginationResponse<IMovie[]
     return res.data;
 }
 
-export const fetchMovie = async ():Promise<any> => {
-    const res = await axiosInstance.get('movie/now_playing');
+export const fetchMovie = async ({ page }: {page: number}):Promise<any> => {
+    const res = await axiosInstance.get(`movie/now_playing?page=${page}`, {
+
+    });
 
     // return await new Promise((ress) => {
     //     setTimeout(() => {
@@ -16,3 +18,7 @@ export const fetchMovie = async ():Promise<any> => {
     return res.data;
   };
   
+export const fetchDetailMovie = async(movie_id: number):Promise<IMovie> => {
+    const res = await axiosInstance.get(`movie/${movie_id}`);
+    return res.data; 
+}

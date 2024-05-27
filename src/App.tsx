@@ -28,7 +28,7 @@ const App: React.FC = () => {
           path='error/*' 
           element={<ErrorsPage />} 
         />
-        <Route path='*' element={<Navigate to='/movie' />} />
+        <Route path='*' element={<Navigate to='/movie/now-playing' />} />
       </Route>
     </Routes>
   );
