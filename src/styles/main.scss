@@ -2,7 +2,8 @@ html,
 body {
   font-family: $font-montserrat;
   overflow-x: hidden;
-  background:linear-gradient(to right,$blu_0,$brown)
+  background:linear-gradient(to right,$blu_0,$brown);
+  color: $text_movie;
 }
 
 * {

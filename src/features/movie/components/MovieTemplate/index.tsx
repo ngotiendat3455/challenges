@@ -6,6 +6,7 @@ import ListView from '../MovieList';
 import GridView from '../GridView';
 import Icon from 'components/atoms/Icon';
 import Button from 'components/atoms/Button';
+import Animate from 'components/organisms/Animate';
 // import { MovieSkeleton } from '../MovieCard';
 
 const Movies = ({
@@ -25,12 +26,12 @@ const MovieTemplate: React.FC<any> = ({
     movies
 }) => {
     const [gridView, setGridView] = React.useState(true);
-    // const [movies, setMovies] = React.useState(temp);
-
 
     return (
         <div className='MovieTemplate'>
-            <SearchForm />
+            <Animate type="fadeIn" animationDelay={`${0.15}s`} defaultDivideScreen={1.3}>
+                <SearchForm />
+            </Animate>
             <Sort
                 setGridView={() => {
                     setGridView(true)
@@ -41,15 +42,11 @@ const MovieTemplate: React.FC<any> = ({
                     setGridView(false)
                 }}
             />
-            {movies.length > 1 ? (
+            {movies.length > 1 && (
                 <Movies
                     gridView={gridView}
                     movieList={movies}
                 />
-            ) : (
-                <h5 className='MovieTemplate-text' style={{ textTransform: 'none' }}>
-                    Sorry, no movies matched your search.
-                </h5>
             )}
             {/* {isLoading &&
                 !movies.length &&
@@ -58,13 +55,13 @@ const MovieTemplate: React.FC<any> = ({
                         <MovieSkeleton />
                     </div>
                 ))} */}
-            {/* {isLoading && movies.length < 1 && (
+            {isLoading && movies.length < 1 && (
                 (
                     <h5 className='MovieTemplate-text' style={{ textTransform: 'none' }}>
                         Sorry, no movies matched your search.
                     </h5>
                 )
-            )} */}
+            )}
             <div className="MovieTemplate-news_actions">
                 {isLoading && (
                     <div className="MovieTemplate-news_actions_icon">

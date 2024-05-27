@@ -88,7 +88,7 @@ function usePaginate<T>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dep);
   return {
-    data, loading, pagination, handleChangePage, hidden: pagination.totalPages <= pagination.page,
+    initData, data, loading, pagination, handleChangePage, hidden: pagination.totalPages <= pagination.page,
   };
 }
 

@@ -1,28 +1,44 @@
+import { AxiosError } from 'axios'
 import Loading from 'components/atoms/Loading'
 import LazyLoad from 'components/molecules/LazyLoadImage'
-import Container from 'components/organisms/Container'
+// import Container from 'components/organisms/Container'
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { IMAGE_URL } from 'services/common/instance'
 import { fetchDetailMovie } from 'services/movie'
 
 const SingleMovie = () => {
-    const { id } = useParams()
-    console.log('id', id);
+    const { id } = useParams();
+    const navigate = useNavigate();
+
     const [isLoading, setIsLoading] = useState(true)
-    // const [error, setError] = useState({ show: false, msg: '' })
     const [data, setData] = useState<IMovie>()
     const fetchMovie = async () => {
         setIsLoading(true)
         try {
-            console.log('id', id);
-            const res = await fetchDetailMovie(id)
+            const res = await fetchDetailMovie(Number(id))
             setData(res)
-
-            // setError({ show: false, msg: '' })
             setIsLoading(false)
         } catch (error) {
-            console.log(error)
+            const errorCode = (error as AxiosError).response?.status || 0;
+            switch (errorCode) {
+              case 503:
+                // return <Errors statusCode={503} />;
+                navigate('/error/500');
+                break;
+              case 500:
+                navigate('/error/500');
+                break;
+              case 404:
+                navigate('/error/404');
+                break;
+              case 403:
+                navigate('/error/500');
+                break;
+              default:
+                navigate('/error/500');
+                break;
+            }
         }
     }
 
