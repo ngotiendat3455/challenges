@@ -1,9 +1,10 @@
 import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import error404 from 'assets/images/error404.png';
 import Container from 'components/organisms/Container';
 
 const Error404: FC = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Container>
@@ -31,9 +32,9 @@ const Error404: FC = () => {
 
         {/* begin::Link */}
         <div className='mb-0'>
-          <Link to='/' className='btn btn-sm btn-primary'>
+          <button onClick={() => navigate(-1)} className='btn btn-sm btn-primary'>
             Return Home
-          </Link>
+          </button>
         </div>
         {/* end::Link */}
       </Container>

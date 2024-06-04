@@ -69,9 +69,9 @@ const SingleMovie = () => {
                 <h2>{title}</h2>
                 <p>{overview}</p>
                 <h4>{vote_average}</h4>
-                <Link to='/' className='btn'>
+                <button onClick={() => navigate(-1)} className='btn'>
                     back to movies
-                </Link>
+                </button>
             </div>
         </section>
     )
