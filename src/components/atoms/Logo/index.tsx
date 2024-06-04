@@ -1,12 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Logo: React.FC = () => {
     return (
-        <a href="#"
-            className='nfLogo'
-            onClick={(e) => {
-                e.preventDefault()
-            }}>
+        <Link to="/" className='nfLogo'>
             <svg
                 className="svg-icon svg-icon-n-logo"
                 focusable="false"
@@ -33,7 +30,7 @@ const Logo: React.FC = () => {
                 />
                 <path d="M225 0l349 983c76 3 136 9 203 17L423 0H225" fill="#e50914" />
             </svg>
-        </a>
+        </Link>
 
     )
 }
